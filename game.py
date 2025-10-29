@@ -28,3 +28,10 @@ def delete_task(tasks: list, index: int) -> bool:
     if tasks.pop(index -1):
         return True
     return False
+
+def edit_task(tasks: list, index: int, new_task: str) -> bool:
+    if index > len(tasks):
+        return False
+    show_all_tasks(tasks)
+    tasks[index - 1] = new_task
+    return True
