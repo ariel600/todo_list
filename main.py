@@ -11,10 +11,15 @@ def main() -> None:
             print("המשימה התווספה לרשימת המשימות.")
         elif coice == "2":
             game.show_all_tasks(todo_list)
-        elif coice == "3":
-            print("אנחנו עובדים על זה.")
+        elif coice == "3": 
+            game.show_all_tasks(todo_list)
+            delete = int(input("בחר את המשימה שברצונך למחוק: "))
+            game.delete_task(todo_list, delete)
         elif coice == "4":
-            print("אנחנו עובדים על זה.")
+            game.show_all_tasks(todo_list)
+            delete = int(input("בחר את המשימה שברצונך לערוך: "))
+            new = input("הכנס את המשימה החדשה: ")
+            game.edit_task(todo_list, delete, new)
         elif coice == "5":
             break
         else:
