@@ -21,10 +21,16 @@ def main() -> None:
             new = input("הכנס את המשימה החדשה: ")
             game.edit_task(todo_list, delete, new)
         elif coice == "5":
+            if len(todo_list) == 0:
+                print("רשימת המשימות ריקה.")
+            else:
+                search = input("הכנס את המילה שברצונך לחפש: ")
+                print(game.search_tasks(todo_list, search))
+        elif coice == "6":
             game.show_all_tasks(todo_list)
             nam = input("הכנס מספר לבדיקה: ")
             print(game.get_task_index_from_user(nam))
-        elif coice == "6":
+        elif coice == "7":
             break
         else:
             print("לא הצלחנו לזהות את הבקשה.")
