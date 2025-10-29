@@ -27,10 +27,17 @@ def main() -> None:
                 search = input("הכנס את המילה שברצונך לחפש: ")
                 print(game.search_tasks(todo_list, search))
         elif coice == "6":
+            if len(todo_list) == 0:
+                print("רשימת המשימות ריקה.")
+            else:
+                game.show_all_tasks(todo_list)
+                done = int(input("בחר את המשימה שהושלמה: "))
+                game.mark_task_as_done(todo_list, done)
+        elif coice == "7":
             game.show_all_tasks(todo_list)
             nam = input("הכנס מספר לבדיקה: ")
             print(game.get_task_index_from_user(nam))
-        elif coice == "7":
+        elif coice == "8":
             break
         else:
             print("לא הצלחנו לזהות את הבקשה.")
