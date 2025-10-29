@@ -23,13 +23,14 @@ def get_user_choice() -> str:
     3. מחיקת משימה
     4. עריכת משימה
     5. חיפוש משימה
-    6. בדיקת אינדקס של משימה
-    7. יציאה
+    6. סימון משימה כהושלמה ✓
+    7. בדיקת אינדקס של משימה
+    8. יציאה
     בחר את האפשרות הרצויה: """
     )
     return choice
 
-def delete_task(tasks: list, index: int):
+def delete_task(tasks: list, index: int) -> None:
     if index > len(tasks):
         print("לא מצאנו את המשימה שברצונך למחוק.")
         return
@@ -61,3 +62,11 @@ def search_tasks(tasks: list, keyword: str) -> list | str:
                 result.append((task, index))
         return result
     return "המילה שחיפשת לא נמצאה ברשימת המשימות."
+
+def mark_task_as_done(tasks: list, index: int) -> bool:
+    if index > len(tasks) < index:
+        print("לא מצאנו את המשימה שברצונך לסמן כהושלמה.")
+        return False
+    tasks[index - 1] = tasks[index - 1] + " ✓ "
+    print("המשימה סומנה כהושלמה.")
+    return True
