@@ -23,3 +23,4 @@ def get_user_choice() -> str:
     בחר את האפשרות הרצויה: """
     )
     return choice
+
