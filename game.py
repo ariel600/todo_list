@@ -23,3 +23,8 @@ def get_user_choice() -> str:
     בחר את האפשרות הרצויה: """
     )
     return choice
+
+def delete_task(tasks: list, index: int) -> bool:
+    if tasks.pop(index -1):
+        return True
+    return False
