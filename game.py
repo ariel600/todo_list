@@ -19,7 +19,8 @@ def get_user_choice() -> str:
     2. הצגת המשימות
     3. מחיקת משימה
     4. עריכת משימה
-    5. יציאה
+    5. בדיקת אינדקס של משימה
+    6. יציאה
     בחר את האפשרות הרצויה: """
     )
     return choice
@@ -40,3 +41,8 @@ def edit_task(tasks: list, index: int, new_task: str):
     tasks[index - 1] = new_task
     print("המשימה שונתה בהצלחה.")
     return
+
+def get_task_index_from_user(nam: int) -> int:
+    if nam <= 0:
+        return "לא מצאנו את המשימה."
+    return nam - 1
