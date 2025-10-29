@@ -11,5 +11,13 @@ def show_all_tasks(tasks: list) -> None:
         index = 0
         for task in tasks:
             index += 1
-            print(f"{index}. {task}")
+            print(f"""{index}. task""")
     pass
+
+def get_user_choice() -> str:
+    pass
+
+def main() -> None:
+    pass
+
+print(show_all_tasks(todo_list))
