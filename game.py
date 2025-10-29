@@ -24,14 +24,21 @@ def get_user_choice() -> str:
     )
     return choice
 
-def delete_task(tasks: list, index: int) -> bool:
-    if tasks.pop(index -1):
-        return True
-    return False
-
-def edit_task(tasks: list, index: int, new_task: str) -> bool:
+def delete_task(tasks: list, index: int):
     if index > len(tasks):
-        return False
+        print("המשימה לא נמצאת.")
+        return
+    if tasks.pop(index - 1):
+        print("המשימה נמחקה.")
+        return
+    print("לא מצאנו את המשימה שברצונך למחוק.")
+    return
+
+def edit_task(tasks: list, index: int, new_task: str):
+    if index > len(tasks):
+        print("לא ניתן לערוך את המשימה, המשימה לא נמצאה.")
+        return
     show_all_tasks(tasks)
     tasks[index - 1] = new_task
-    return True
+    print("המשימה שונתה בהצלחה.")
+    return
