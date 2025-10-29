@@ -1,3 +1,6 @@
+from unittest import result
+
+
 def add_task(tasks: list, task: str) -> None:
     tasks.append(task)
     pass
@@ -19,8 +22,9 @@ def get_user_choice() -> str:
     2. הצגת המשימות
     3. מחיקת משימה
     4. עריכת משימה
-    5. בדיקת אינדקס של משימה
-    6. יציאה
+    5. חיפוש משימה
+    6. בדיקת אינדקס של משימה
+    7. יציאה
     בחר את האפשרות הרצויה: """
     )
     return choice
@@ -46,3 +50,14 @@ def get_task_index_from_user(nam: int) -> int:
     if nam <= 0:
         return "לא מצאנו את המשימה."
     return nam - 1
+
+def search_tasks(tasks: list, keyword: str) -> list | str:
+    if len(tasks) > 0:
+        result = []
+        index = -1
+        for task in tasks:
+            index += 1
+            if keyword in task:
+                result.append((task, index))
+        return result
+    return "המילה שחיפשת לא נמצאה ברשימת המשימות."
