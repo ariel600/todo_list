@@ -26,12 +26,10 @@ def get_user_choice() -> str:
 
 def delete_task(tasks: list, index: int):
     if index > len(tasks):
-        print("המשימה לא נמצאת.")
+        print("לא מצאנו את המשימה שברצונך למחוק.")
         return
     if tasks.pop(index - 1):
         print("המשימה נמחקה.")
-        return
-    print("לא מצאנו את המשימה שברצונך למחוק.")
     return
 
 def edit_task(tasks: list, index: int, new_task: str):
